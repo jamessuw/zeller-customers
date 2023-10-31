@@ -1,0 +1,108 @@
+.section-1 {
+  display: block;
+  margin: auto;
+  width: 100%;
+  padding: auto;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.container-1 {
+  display: flex;
+  height: 100vh;
+  background: rgb(250, 250, 250);
+  background: linear-gradient(
+    90deg,
+    rgba(250, 250, 250, 1) 0%,
+    rgba(0, 212, 255, 0.08671586715867163) 100%
+  );
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+
+.MuiFormControl-root.css-1nrlq1o-MuiFormControl-root {
+  display: block;
+}
+.MuiFormGroup-root.radio-group.css-dmmspl-MuiFormGroup-root {
+    margin-bottom: 50px;
+}
+
+.form {
+  display: block;
+  margin: auto;
+  background-color: #ffff;
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: 700px;
+  width: 50%;
+  padding: 30px;
+}
+
+.admin-selected {
+  background-color: #24a0ed38;
+  border-radius: 10px;
+}
+
+.manager-selected {
+  background-color: #24a0ed38;
+  border-radius: 10px;
+}
+
+.radio-container {
+  padding: 8px;
+}
+
+.line {
+  display: block;
+  width: 100%;
+  height: 0.5px;
+  background-color: rgb(203, 198, 198);
+}
+
+/*==============styling for admin user===================*/
+
+.admin-user {
+  display: flex;
+  flex-direction: column;
+}
+ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root {
+  width: 100%;
+}
+
+li.MuiListItem-root.MuiListItem-gutters.MuiListItem-padding.css-1p823my-MuiListItem-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-left: 0px;
+}
+
+.list-container {
+  display: flex;
+
+  margin-bottom: 10px;
+}
+
+.css-1bzwfl2-MuiList-root {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: fit-content;
+  max-width: 360px;
+  background-color: #fff;
+}
+
+.MuiAvatar-root.MuiAvatar-square.MuiAvatar-colorDefault.css-sxmie0-MuiAvatar-root {
+  color: #5f5ff3;
+  border-radius: 4px;
+}
+
+.MuiListItemAvatar-root.css-1e9lk82-MuiListItemAvatar-root {
+  padding: 8px;
+}
+.css-1p823my-MuiListItem-root {
+  align-items: start !important;
+}
