@@ -1,7 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-
-import App from './App'; // Your main application component
+import App from './App'; 
 import awsconfig from './config/aws-exports';
 import { Amplify } from 'aws-amplify';
 import './index.css';

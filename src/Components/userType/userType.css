@@ -1,3 +1,5 @@
+/*==========main container============*/
+
 .section-1 {
   display: block;
   margin: auto;
@@ -21,6 +23,9 @@
   text-align: left;
 }
 
+/*==========main container============*/
+
+/*========== Form and radio containner ============*/
 .MuiFormControl-root.css-1nrlq1o-MuiFormControl-root {
   display: block;
 }
@@ -59,8 +64,9 @@
   height: 0.5px;
   background-color: rgb(203, 198, 198);
 }
+/*========== Form and radio containner ============*/
 
-/*==============styling for admin user===================*/
+/*==============styling for user type container===================*/
 
 .admin-user {
   display: flex;

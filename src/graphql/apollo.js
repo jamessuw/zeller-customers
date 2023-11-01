@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import awsconfig from '../config/aws-exports'; // Adjust the import path based on your folder structure
+import awsconfig from '../config/aws-exports'; 
 
 const httpLink = createHttpLink({
   uri: awsconfig.aws_appsync_graphqlEndpoint,
@@ -10,7 +10,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      'x-api-key': awsconfig.aws_appsync_apiKey, // Adjust the header key based on your API requirements
+      'x-api-key': awsconfig.aws_appsync_apiKey, 
     },
   };
 });

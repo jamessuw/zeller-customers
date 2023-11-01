@@ -30,7 +30,7 @@ function UserType() {
 
   const handleChange = (event) => {
     setValue(event.target.value);
-    // Additional logic for handling the value change if needed
+
   };
 
   return (

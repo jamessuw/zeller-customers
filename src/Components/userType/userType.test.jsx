@@ -1,6 +1,6 @@
 import React from 'react';
 import { MockedProvider } from '@apollo/client/testing';
-import UserType from './userType'; // Import your UserType component here
+import UserType from './userType'; 
 import { LIST_ZELLER_CUSTOMERS } from '../../graphql/queries';
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 
@@ -33,12 +33,12 @@ test('renders component and handles user type change', async () => {
     </MockedProvider>
   );
 
-  // Wait for the component to render initially
+ 
   await waitFor(() => {
     expect(screen.getByLabelText('Manager')).toBeInTheDocument();
   });
 
-  // Simulate a user type change (selecting 'Manager' type)
+  // user type change (selecting 'Manager' type)
   fireEvent.click(screen.getByLabelText('Manager'));
 
   // Wait for the component to update after the user type change
