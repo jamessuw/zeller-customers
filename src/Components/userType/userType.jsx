@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { LIST_ZELLER_CUSTOMERS } from '../../graphql/queries.ts';
-
 import {
   FormControl,
   FormLabel,
@@ -17,22 +16,22 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import { lightBlue } from '@mui/material/colors';
 
-
-
 function UserType() {
-  const { loading, error, data } = useQuery(LIST_ZELLER_CUSTOMERS);
-
   const [value, setValue] = useState('Admin'); // State variable for 'value'
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-    // Additional logic for handling the value change if needed
-  };
+  const { loading, error, data } = useQuery(LIST_ZELLER_CUSTOMERS, {
+    variables: { userType: value }, // Pass userType as a variable
+  });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   const customers = data.listZellerCustomers.items;
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+    // Additional logic for handling the value change if needed
+  };
 
   return (
     <section className="section-1">
@@ -51,7 +50,7 @@ function UserType() {
             >
               <div
                 className={`radio-container ${
-                  value === "Admin" ? "admin-selected" : ""
+                  value === 'Admin' ? 'admin-selected' : ''
                 }`}
               >
                 <FormControlLabel
@@ -62,7 +61,7 @@ function UserType() {
               </div>
               <div
                 className={`radio-container ${
-                  value === "Manager" ? "manager-selected" : ""
+                  value === 'Manager' ? 'manager-selected' : ''
                 }`}
               >
                 <FormControlLabel
@@ -76,25 +75,28 @@ function UserType() {
           <span className="line"></span>
 
           <span>
-            <h2>Admin Users</h2>
+            <h2>{value === 'Admin' ? 'Admin' : 'Manager'} Users</h2>
           </span>
 
-          <div className="admin-user">
-          <List>
-          {customers.map((customer) => (
-            <ListItem key={customer.id}>
-              <div className="list-container">
-                <ListItemAvatar>
-                  <Avatar sx={{ bgcolor: lightBlue[50] }} variant="square">
-                    {customer.name[0]}
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary={customer.name} secondary={customer.role} />
-              </div>
-              <span className="line"></span>
-            </ListItem>
-          ))}
-        </List>
+          <div className={`${value.toLowerCase()}-user`}>
+            <List>
+              {customers.map((customer) => (
+                <ListItem key={customer.id}>
+                  <div className="list-container">
+                    <ListItemAvatar>
+                      <Avatar sx={{ bgcolor: lightBlue[50] }} variant="square">
+                        {customer.name[0]}
+                      </Avatar>
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={customer.name}
+                      secondary={customer.role}
+                    />
+                  </div>
+                  <span className="line"></span>
+                </ListItem>
+              ))}
+            </List>
           </div>
         </div>
       </div>

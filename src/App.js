@@ -1,7 +1,11 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/client';
+import client from './graphql/apollo';
 import UserType from './Components/userType/userType';
-import client from './graphql/apollo'; 
+import awsconfig from './config/aws-exports';
+import { Amplify } from 'aws-amplify'
+
+Amplify.configure(awsconfig);
 
 function App() {
   return (
@@ -14,9 +18,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-

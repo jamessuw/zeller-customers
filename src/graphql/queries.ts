@@ -1,11 +1,8 @@
-/* eslint-disable */
-// this is an auto generated file. This will be overwritten
-
 import { gql } from '@apollo/client';
 
 export const LIST_ZELLER_CUSTOMERS = gql`
-  query ListZellerCustomers {
-    listZellerCustomers {
+  query ListZellerCustomers($userType: String!) {
+    listZellerCustomers(filter: { role: { eq: $userType } }) {
       items {
         email
         id
@@ -15,4 +12,3 @@ export const LIST_ZELLER_CUSTOMERS = gql`
     }
   }
 `;
-

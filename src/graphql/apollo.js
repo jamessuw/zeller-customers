@@ -10,7 +10,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      Authorization: awsconfig.aws_appsync_apiKey,
+      'x-api-key': awsconfig.aws_appsync_apiKey, // Adjust the header key based on your API requirements
     },
   };
 });
